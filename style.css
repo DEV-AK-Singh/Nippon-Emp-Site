@@ -247,10 +247,36 @@ h1 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.view-button { 
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s;
+  animation: fadeIn 1s ease-out 0.6s both;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
 .join-button:hover {
   background: #e67100;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.view-button:hover {
+  color: #e67100;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 h2 {
