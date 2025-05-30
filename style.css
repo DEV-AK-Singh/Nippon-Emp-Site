@@ -336,7 +336,7 @@ h2::after {
   flex: 1 1 200px;
   padding: 30px 20px;
   background: white;
-  border-radius: 10px;
+  border-radius: 20px 0px 20px 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 }
@@ -582,21 +582,7 @@ button:hover {
   margin: 60px 20px;
   text-align: center;
 }
-
-.stat-item {
-  flex: 1 1 200px;
-  margin: 15px;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
-}
-
-.stat-item:hover {
-  transform: translateY(-10px);
-}
-
+ 
 .stat-number {
   font-size: 2.5em;
   font-weight: 700;
