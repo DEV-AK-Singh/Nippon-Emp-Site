@@ -27,10 +27,75 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
 
-// Simple animation trigger on scroll
-document.addEventListener("DOMContentLoaded", function () {
+  // Modal functionality
+  const modalTriggers = {
+    talkToExpertBtn: "talkToExpertModal",
+    shareCardBtn: "talkToExpertModal",
+    joinTeamBtn: "joinTeamModal",
+    joinTeamBtn2: "joinTeamModal",
+    productExpertBtn: "talkToExpertModal",
+    chatbotBtn: "chatbotModal",
+    showProductsBtn: "talkToExpertModal",
+    callBackBtn: "talkToExpertModal",
+    whatsappBtn: "talkToExpertModal",
+  };
+
+  // Set up all modal triggers
+  Object.keys(modalTriggers).forEach((triggerId) => {
+    const btn = document.getElementById(triggerId);
+    if (btn) {
+      btn.addEventListener("click", () => {
+        document.getElementById(modalTriggers[triggerId]).style.display =
+          "flex";
+      });
+    }
+  });
+
+  // Close modals when clicking X
+  document.querySelectorAll(".close-modal").forEach((closeBtn) => {
+    closeBtn.addEventListener("click", function () {
+      this.closest(".modal").style.display = "none";
+    });
+  });
+
+  // Close modals when clicking outside
+  document.querySelectorAll(".modal").forEach((modal) => {
+    modal.addEventListener("click", function (e) {
+      if (e.target === this) {
+        this.style.display = "none";
+      }
+    });
+  });
+
+  // Form submissions
+  document
+    .getElementById("expertForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Our expert will contact you shortly.");
+      this.reset();
+      document.getElementById("talkToExpertModal").style.display = "none";
+    });
+
+  document
+    .getElementById("joinTeamForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert(
+        "Thank you for your interest! We will get back to you about joining our team."
+      );
+      this.reset();
+      document.getElementById("joinTeamModal").style.display = "none";
+    });
+
+  // Show welcome modal on page load
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("talkToExpertModal").style.display = "flex";
+    }, 1000);
+  });
+
   const animateElements = document.querySelectorAll(
     ".benefit-card, .testimonial-card, .stat-item"
   );
